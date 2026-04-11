@@ -74,7 +74,7 @@ const Tile = ({ tile, size, onSwap, isProcessing }: TileProps) => {
         opacity: { duration: 0.2 },
         scale: { duration: 0.2 }
       }}
-      className="absolute flex items-center justify-center p-1 touch-none"
+      className="absolute flex items-center justify-center p-1 touch-none cursor-pointer"
       style={{ width: size, height: size, zIndex: tile.isMatched ? 10 : 1 }}
     >
       <div className={cn(
@@ -176,8 +176,8 @@ export function InteractiveMatch3() {
                 className={cn(
                   "px-4 py-2 rounded-xl font-bold text-sm transition-all duration-300",
                   betMultiplier === mult 
-                    ? "bg-cyan-950/50 border border-cyan-400 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.4)] scale-105" 
-                    : "bg-surface-container-low border border-white/5 text-on-surface-variant hover:bg-surface-container hover:text-white"
+                    ? "bg-cyan-950/50 border border-cyan-400 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.4)] scale-105 cursor-pointer" 
+                    : "bg-surface-container-low border border-white/5 text-on-surface-variant hover:bg-surface-container hover:text-white cursor-pointer"
                 )}
               >
                 x{mult}
@@ -194,7 +194,7 @@ export function InteractiveMatch3() {
           data-tutorial="randomize"
           onClick={() => setShowRandomizeConfirm(true)}
           disabled={isProcessing || balance < COST_RANDOMIZE}
-          className="flex items-center gap-2 px-4 py-2 bg-surface-container-high border border-primary-container/30 text-primary-container rounded-xl hover:bg-primary-container/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm font-bold"
+          className="flex items-center gap-2 px-4 py-2 bg-surface-container-high border border-primary-container/30 text-primary-container rounded-xl hover:bg-primary-container/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm font-bold cursor-pointer"
         >
           <Shuffle className="w-4 h-4" />
           Acak Ulang Board (Rp 10.000)
@@ -223,13 +223,13 @@ export function InteractiveMatch3() {
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowRandomizeConfirm(false)}
-                  className="flex-1 py-2.5 rounded-xl bg-surface-container-low text-white font-bold hover:bg-surface-container transition-colors"
+                  className="flex-1 py-2.5 rounded-xl bg-surface-container-low text-white font-bold hover:bg-surface-container transition-colors cursor-pointer"
                 >
                   Batal
                 </button>
                 <button
                   onClick={handleRandomize}
-                  className="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-bold hover:bg-primary transition-colors shadow-[0_0_15px_rgba(0,255,255,0.3)]"
+                  className="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-bold hover:bg-primary transition-colors shadow-[0_0_15px_rgba(0,255,255,0.3)] cursor-pointer"
                 >
                   Ya, Lanjutkan
                 </button>

@@ -36,7 +36,7 @@ export function AdminPanel() {
             <button
               key={val}
               onClick={() => setAdminTargetWin(val)}
-              className={`py-2 rounded-xl text-xs font-bold transition-all ${adminTargetWin === val ? 'bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]' : 'bg-purple-950/40 text-purple-300 border border-purple-500/20 hover:bg-purple-900/60'}`}
+              className={`py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${adminTargetWin === val ? 'bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]' : 'bg-purple-950/40 text-purple-300 border border-purple-500/20 hover:bg-purple-900/60'}`}
             >
               Rp {val.toLocaleString('id-ID')}
             </button>
@@ -50,13 +50,13 @@ export function AdminPanel() {
             placeholder="Custom (Rp)"
             className="flex-1 bg-purple-950/40 border border-purple-500/20 rounded-xl px-3 py-2 text-sm text-white placeholder:text-purple-300/30 focus:outline-none focus:border-purple-400"
           />
-          <button type="submit" className="px-4 py-2 bg-purple-900/60 text-purple-300 rounded-xl text-xs font-bold border border-purple-500/20 hover:bg-purple-800/60">
+          <button type="submit" className="px-4 py-2 bg-purple-900/60 text-purple-300 rounded-xl text-xs font-bold border border-purple-500/20 hover:bg-purple-800/60 cursor-pointer">
             Set
           </button>
         </form>
         <button 
           onClick={() => setAdminTargetWin(null)}
-          className={`w-full py-2 rounded-xl text-xs font-bold transition-all ${adminTargetWin === null ? 'bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]' : 'bg-purple-950/40 text-purple-300 border border-purple-500/20 hover:bg-purple-900/60'}`}
+          className={`w-full py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${adminTargetWin === null ? 'bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]' : 'bg-purple-950/40 text-purple-300 border border-purple-500/20 hover:bg-purple-900/60'}`}
         >
           Auto (RNG Manipulasi Default)
         </button>

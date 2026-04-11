@@ -266,7 +266,7 @@ export function SpotlightTutorial() {
                   {tutorialStepIndex + 1}/{TUTORIAL_STEPS.length}
                 </span>
               </h4>
-              <button onClick={skipTutorial} className="text-on-surface-variant hover:text-white transition-colors">
+              <button onClick={skipTutorial} className="text-on-surface-variant hover:text-white transition-colors cursor-pointer">
                 <X className="w-4 h-4" />
               </button>
             </div>
@@ -281,11 +281,11 @@ export function SpotlightTutorial() {
               </div>
               <div className="flex gap-2">
                 {!isFirst && (
-                  <button onClick={prevTutorialStep} className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
+                  <button onClick={prevTutorialStep} className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors cursor-pointer">
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                 )}
-                <button onClick={isLast ? skipTutorial : nextTutorialStep} className="flex items-center gap-1 bg-primary-container text-on-primary-container px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-primary transition-colors shadow-[0_0_15px_rgba(0,255,255,0.3)]">
+                <button onClick={isLast ? skipTutorial : nextTutorialStep} className="flex items-center gap-1 bg-primary-container text-on-primary-container px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-primary transition-colors shadow-[0_0_15px_rgba(0,255,255,0.3)] cursor-pointer">
                   {isLast ? "Selesai" : "Selanjutnya"}
                   {!isLast && <ChevronRight className="w-4 h-4" />}
                 </button>

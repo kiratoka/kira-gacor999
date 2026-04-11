@@ -17,7 +17,7 @@ export function Sidebar() {
         )}
         <button 
           onClick={toggleSidebar}
-          className="p-1.5 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors"
+          className="p-1.5 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
           title={isSidebarMinimized ? "Perbesar Sidebar" : "Perkecil Sidebar"}
         >
           {isSidebarMinimized ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
@@ -34,35 +34,35 @@ export function Sidebar() {
       )}
 
       <nav className="flex-1 px-2 space-y-1 overflow-x-hidden">
-        <a href="#" className={`flex items-center py-3 bg-primary-container/10 text-primary-container border-r-4 border-primary-container font-bold transition-all duration-200 ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Simulator">
+        <a href="#" className={`flex items-center py-3 bg-primary-container/10 text-primary-container border-r-4 border-primary-container font-bold transition-all duration-200 cursor-pointer ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Simulator">
           <Dices className={`w-5 h-5 ${isSidebarMinimized ? 'mr-0' : 'mr-3 shrink-0'}`} />
           {!isSidebarMinimized && <span className="font-label truncate">Simulator</span>}
         </a>
-        <a href="#" className={`flex items-center py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all duration-200 ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Cek Realita">
+        <a href="#" className={`flex items-center py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all duration-200 cursor-pointer ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Cek Realita">
           <LineChart className={`w-5 h-5 ${isSidebarMinimized ? 'mr-0' : 'mr-3 shrink-0'}`} />
           {!isSidebarMinimized && <span className="font-label truncate">Cek Realita</span>}
         </a>
-        <a href="#" className={`flex items-center py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all duration-200 ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Logika Penipuan">
+        <a href="#" className={`flex items-center py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all duration-200 cursor-pointer ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Logika Penipuan">
           <Brain className={`w-5 h-5 ${isSidebarMinimized ? 'mr-0' : 'mr-3 shrink-0'}`} />
           {!isSidebarMinimized && <span className="font-label truncate">Logika Penipuan</span>}
         </a>
-        <a href="#" className={`flex items-center py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all duration-200 ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Pusat Edukasi">
+        <a href="#" className={`flex items-center py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all duration-200 cursor-pointer ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Pusat Edukasi">
           <GraduationCap className={`w-5 h-5 ${isSidebarMinimized ? 'mr-0' : 'mr-3 shrink-0'}`} />
           {!isSidebarMinimized && <span className="font-label truncate">Pusat Edukasi</span>}
         </a>
       </nav>
 
       <div className="p-4 border-t border-white/5 space-y-1 overflow-x-hidden">
-        <a href="#" className={`flex items-center py-2 text-on-surface-variant hover:text-on-surface transition-all ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Bantuan">
+        <a href="#" className={`flex items-center py-2 text-on-surface-variant hover:text-on-surface transition-all cursor-pointer ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Bantuan">
           <CircleHelp className={`w-4 h-4 ${isSidebarMinimized ? 'mr-0' : 'mr-3 shrink-0'}`} />
           {!isSidebarMinimized && <span className="text-sm font-label truncate">Bantuan</span>}
         </a>
-        <a href="#" className={`flex items-center py-2 text-on-surface-variant hover:text-on-surface transition-all ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Pengaturan">
+        <a href="#" className={`flex items-center py-2 text-on-surface-variant hover:text-on-surface transition-all cursor-pointer ${isSidebarMinimized ? 'px-0 justify-center' : 'px-4'}`} title="Pengaturan">
           <Settings className={`w-4 h-4 ${isSidebarMinimized ? 'mr-0' : 'mr-3 shrink-0'}`} />
           {!isSidebarMinimized && <span className="text-sm font-label truncate">Pengaturan</span>}
         </a>
         <button 
-          className={`w-full mt-4 bg-tertiary-container/10 text-tertiary hover:bg-tertiary-container/20 transition-all font-bold font-label text-sm uppercase tracking-widest border border-tertiary/30 flex items-center justify-center ${isSidebarMinimized ? 'py-3 px-0' : 'py-3 px-4'}`}
+          className={`w-full mt-4 bg-tertiary-container/10 text-tertiary hover:bg-tertiary-container/20 transition-all font-bold font-label text-sm uppercase tracking-widest border border-tertiary/30 flex items-center justify-center cursor-pointer ${isSidebarMinimized ? 'py-3 px-0' : 'py-3 px-4'}`}
           title="Keluar Sekarang"
         >
           {isSidebarMinimized ? <LogOut className="w-4 h-4" /> : "Keluar Sekarang"}

@@ -64,7 +64,7 @@ export function Withdraw() {
         <button
           onClick={handleWithdraw}
           disabled={isWithdrawing}
-          className="w-full py-3 px-4 bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-bold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full py-3 px-4 bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-bold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
         >
           {isWithdrawing ? "Memproses..." : "Tarik Sekarang"}
         </button>

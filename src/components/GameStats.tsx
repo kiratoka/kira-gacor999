@@ -29,7 +29,7 @@ export function GameStats() {
           </div>
           <button
             onClick={() => setShowTopUp(true)}
-            className="flex items-center gap-2 bg-primary-container/10 hover:bg-primary-container/20 text-primary-container px-3 py-1.5 rounded-lg transition-colors border border-primary-container/30 text-xs font-bold shrink-0 relative z-10"
+            className="flex items-center gap-2 bg-primary-container/10 hover:bg-primary-container/20 text-primary-container px-3 py-1.5 rounded-lg transition-colors border border-primary-container/30 text-xs font-bold shrink-0 relative z-10 cursor-pointer"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Tambah Saldo</span>
@@ -102,7 +102,7 @@ export function GameStats() {
             >
               <button 
                 onClick={() => setShowTopUp(false)}
-                className="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors"
+                className="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -117,7 +117,7 @@ export function GameStats() {
                   <button
                     key={amount}
                     onClick={() => handleTopUp(amount)}
-                    className="p-3 rounded-xl bg-surface-container-high border border-white/10 hover:border-primary-container/50 hover:bg-primary-container/10 transition-all text-sm font-bold text-white font-mono"
+                    className="p-3 rounded-xl bg-surface-container-high border border-white/10 hover:border-primary-container/50 hover:bg-primary-container/10 transition-all text-sm font-bold text-white font-mono cursor-pointer"
                   >
                     Rp {(amount / 1000)}k
                   </button>
@@ -143,7 +143,7 @@ export function GameStats() {
                   if (!isNaN(val) && val > 0) handleTopUp(val);
                 }}
                 disabled={!customAmount || isNaN(parseInt(customAmount)) || parseInt(customAmount) <= 0}
-                className="w-full mt-4 py-3 bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-bold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full mt-4 py-3 bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-bold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 Top Up Sekarang
               </button>
