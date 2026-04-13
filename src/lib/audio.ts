@@ -53,6 +53,11 @@ class SimpleSynth {
     this.init();
     this.playTone(150, 'sawtooth', 0.2, 0.05);
   }
+
+  playTap() {
+    this.init();
+    this.playTone(600, 'sine', 0.05, 0.03);
+  }
 }
 
 export const soundEngine = new SimpleSynth();

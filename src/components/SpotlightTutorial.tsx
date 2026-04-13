@@ -194,8 +194,6 @@ export function SpotlightTutorial() {
         className="fixed inset-0 z-[9990] pointer-events-auto transition-opacity duration-300 spotlight-overlay" 
         style={{
           background: 'rgba(0,0,0,0.75)',
-          backdropFilter: 'blur(6px)',
-          WebkitBackdropFilter: 'blur(6px)',
           // Default values, will be overridden by JS
           '--x': '50%',
           '--y': '50%',
@@ -228,7 +226,7 @@ export function SpotlightTutorial() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="absolute bg-surface-container-highest/95 backdrop-blur-xl border border-primary-container/50 p-5 rounded-2xl shadow-[0_10px_40px_rgba(0,255,255,0.2)] z-[10000] pointer-events-auto"
+          className="absolute bg-surface-container-highest/95 border border-primary-container/50 p-5 rounded-2xl shadow-[0_10px_40px_rgba(0,255,255,0.2)] z-[10000] pointer-events-auto"
           style={
             targetData?.isNone
               ? {
