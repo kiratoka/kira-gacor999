@@ -24,17 +24,15 @@ export function Withdraw() {
     setProgress(0);
     setError(null);
     setSuccess(null);
-    setWithdrawAttempted(true); // Trigger rigged logic
+    setWithdrawAttempted(true);
 
-    // Fake loading sequence
     let currentProgress = 0;
     const interval = setInterval(() => {
       currentProgress += Math.random() * 15;
       if (currentProgress > 90) {
-        currentProgress = 90; // Get stuck at 90%
+        currentProgress = 90;
         clearInterval(interval);
         
-        // Wait a bit stuck at 90%, then show result
         setTimeout(() => {
           if (!hasWithdrawn && stats.totalWon >= 50000) {
             setProgress(100);
@@ -51,7 +49,8 @@ export function Withdraw() {
   };
 
   return (
-    <div className="space-y-4 mt-6">
+    // ↓ removed the old "mt-6" — parent gap-4 handles spacing now
+    <div className="space-y-4">
       <div id="withdraw-section" data-tutorial="withdraw" className="bg-surface-container-high p-6 rounded-2xl border border-white/5">
         <div className="flex items-center justify-between mb-4">
           <div>
@@ -125,68 +124,65 @@ export function Withdraw() {
         </AnimatePresence>
       </div>
 
-      {/* Moral Message Component */}
-       <div
-      id="moral-message"
-      data-tutorial="withdraw-moral"
-      style={{
-        backgroundColor: 'rgba(255,45,107,0.06)',
-        border: '1px solid rgba(255,45,107,0.28)',
-        borderRadius: '16px',
-        padding: '18px 20px',
-        boxShadow: '0 0 28px rgba(255,45,107,0.08)',
-        width: '100%',
-        boxSizing: 'border-box',
-      }}
-    >
-      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-        {/* Icon */}
-        <div
-          style={{
-            padding: '8px',
-            backgroundColor: 'rgba(255,45,107,0.15)',
-            borderRadius: '10px',
-            border: '1px solid rgba(255,45,107,0.3)',
-            flexShrink: 0,
-          }}
-        >
-          <AlertTriangle style={{ width: '18px', height: '18px', color: '#ff2d6b' }} />
-        </div>
- 
-        {/* Text */}
-        <div style={{ minWidth: 0 }}>
-          <h4
+      {/* Moral Message */}
+      <div
+        id="moral-message"
+        data-tutorial="withdraw-moral"
+        style={{
+          backgroundColor: 'rgba(255,45,107,0.06)',
+          border: '1px solid rgba(255,45,107,0.28)',
+          borderRadius: '16px',
+          padding: '18px 20px',
+          boxShadow: '0 0 28px rgba(255,45,107,0.08)',
+          width: '100%',
+          boxSizing: 'border-box',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+          <div
             style={{
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#ff2d6b',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              marginBottom: '8px',
-              textShadow: '0 0 10px rgba(255,45,107,0.4)',
+              padding: '8px',
+              backgroundColor: 'rgba(255,45,107,0.15)',
+              borderRadius: '10px',
+              border: '1px solid rgba(255,45,107,0.3)',
+              flexShrink: 0,
             }}
           >
-            Fakta Tersembunyi
-          </h4>
-          <p
-            style={{
-              fontSize: '12px',
-              color: 'rgba(255,160,180,0.8)',
-              lineHeight: 1.7,
-              fontStyle: 'italic',
-              margin: 0,
-              borderLeft: '2px solid rgba(255,45,107,0.3)',
-              paddingLeft: '12px',
-            }}
-          >
-            "Meskipun kamu berhasil menang, itu bisa jadi hanya keberuntungan yang diatur. Bahkan jika
-            kamu berhasil menarik Rp 50.000, itu bukan berarti kamu mengalahkan sistem. Banyak pemain lain
-            terus kalah untuk menutupi kemenangan tersebut. Dan kemungkinan besar, kamu akan kembali
-            bermain dan kehilangan lebih banyak."
-          </p>
+            <AlertTriangle style={{ width: '18px', height: '18px', color: '#ff2d6b' }} />
+          </div>
+          <div style={{ minWidth: 0 }}>
+            <h4
+              style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#ff2d6b',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                marginBottom: '8px',
+                textShadow: '0 0 10px rgba(255,45,107,0.4)',
+              }}
+            >
+              Fakta Tersembunyi
+            </h4>
+            <p
+              style={{
+                fontSize: '12px',
+                color: 'rgba(255,160,180,0.8)',
+                lineHeight: 1.7,
+                fontStyle: 'italic',
+                margin: 0,
+                borderLeft: '2px solid rgba(255,45,107,0.3)',
+                paddingLeft: '12px',
+              }}
+            >
+              "Meskipun kamu berhasil menang, itu bisa jadi hanya keberuntungan yang diatur. Bahkan jika
+              kamu berhasil menarik Rp 50.000, itu bukan berarti kamu mengalahkan sistem. Banyak pemain lain
+              terus kalah untuk menutupi kemenangan tersebut. Dan kemungkinan besar, kamu akan kembali
+              bermain dan kehilangan lebih banyak."
+            </p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
