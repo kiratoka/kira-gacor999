@@ -104,7 +104,7 @@ export function Paytable() {
       {/* ROWS */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {PAYTABLE_DATA.map((item, idx) => (
-          <PaytableRow key={idx} item={item} />
+          <PaytableRow key={idx} item={item} />   
         ))}
       </div>
  
@@ -131,7 +131,7 @@ export function Paytable() {
 // Threshold (px) di mana reward cells pindah ke bawah nama
 const NARROW_BREAKPOINT = 280;
  
-function PaytableRow({ item }: { item: (typeof PAYTABLE_DATA)[0] }) {
+function PaytableRow({ item }: { item: (typeof PAYTABLE_DATA)[0], key?: React.Key }) {
   const [hovered, setHovered] = React.useState(false);
   const [narrow, setNarrow] = React.useState(false);
   const rowRef = React.useRef<HTMLDivElement>(null);

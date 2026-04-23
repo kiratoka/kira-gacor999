@@ -49,8 +49,8 @@ export function BalanceChart() {
             <AreaChart
               data={balanceHistory}
               margin={{ top: 5, right: 5, left: 10, bottom: 5 }}
-              onMouseMove={(e) => {
-                if (e.activePayload) {
+              onMouseMove={(e: any) => {
+                if (e && e.activePayload) {
                   setHoveredData(e.activePayload[0].payload);
                 }
               }}

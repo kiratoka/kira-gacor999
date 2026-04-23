@@ -30,6 +30,7 @@ interface WeightBarProps {
   weight: number;
   maxWeight: number;
   index: number;
+  key?: React.Key;
 }
 
 // ─── Tile Labels & Colors (matching InteractiveMatch3) ───────────────────────

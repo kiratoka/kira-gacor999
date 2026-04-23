@@ -202,7 +202,9 @@ export function InteractiveMatch3() {
   const [holdingTileId, setHoldingTileId] = useState<string | null>(null);
 
   useEffect(() => {
-    initGame();
+    if (useGameStore.getState().grid.length === 0) {
+      initGame();
+    }
     
     const updateSize = () => {
       if (containerRef.current) {
