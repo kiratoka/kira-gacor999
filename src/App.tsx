@@ -9,10 +9,11 @@ import { Withdraw } from './components/Withdraw';
 import { AdminPanel } from './components/AdminPanel';
 import { BalanceChart } from './components/BalanceChart';
 import { LogikaPage } from './components/LogikaPage';
+import { CekRealitaPage } from './components/CekRealitaPage';
 import { Dices, LineChart, Brain, GraduationCap } from 'lucide-react';
 import { useGameStore } from './store/gameStore';
 
-export type PageId = 'simulator' | 'logika';
+export type PageId = 'simulator' | 'logika' | 'realita';
 
 export default function App() {
   const isSidebarMinimized = useGameStore(state => state.isSidebarMinimized);
@@ -91,6 +92,7 @@ export default function App() {
         )}
 
         {currentPage === 'logika' && <LogikaPage />}
+        {currentPage === 'realita' && <CekRealitaPage />}
       </main>
 
       {currentPage === 'simulator' && <SpotlightTutorial />}
@@ -105,18 +107,14 @@ export default function App() {
           <Dices className="w-6 h-6" />
           <span className="text-[10px] font-label mt-1 uppercase">Simulator</span>
         </button>
+        <button onClick={() => setCurrentPage('realita')} className={`flex flex-col items-center ${currentPage === 'realita' ? 'text-primary-container' : 'text-on-surface-variant'}`}>
+          <LineChart className="w-6 h-6" />
+          <span className="text-[10px] font-label mt-1 uppercase">Realita</span>
+        </button>
         <button onClick={() => setCurrentPage('logika')} className={`flex flex-col items-center ${currentPage === 'logika' ? 'text-primary-container' : 'text-on-surface-variant'}`}>
           <Brain className="w-6 h-6" />
           <span className="text-[10px] font-label mt-1 uppercase">Logika</span>
         </button>
-        <a href="#" className="flex flex-col items-center text-on-surface-variant">
-          <LineChart className="w-6 h-6" />
-          <span className="text-[10px] font-label mt-1 uppercase">Realita</span>
-        </a>
-        <a href="#" className="flex flex-col items-center text-on-surface-variant">
-          <GraduationCap className="w-6 h-6" />
-          <span className="text-[10px] font-label mt-1 uppercase">Edukasi</span>
-        </a>
       </nav>
     </div>
   );
