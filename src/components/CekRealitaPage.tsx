@@ -354,9 +354,8 @@ export function CekRealitaPage() {
                 </div>
                 <div className="text-left md:text-right">
                   <span
-                    className={`text-4xl font-headline font-black leading-none ${
-                      historyStats.isBalanceNetLoss ? 'glow-text-red' : 'glow-text-cyan'
-                    }`}
+                    className={`text-4xl font-headline font-black leading-none ${historyStats.isBalanceNetLoss ? 'glow-text-red' : 'glow-text-cyan'
+                      }`}
                     style={{ color: accentColor }}
                   >
                     {historyStats.isBalanceNetLoss ? '-' : '+'}
@@ -587,9 +586,8 @@ export function CekRealitaPage() {
                       {['Waktu', 'Aksi', 'Perubahan', 'Saldo'].map((h, i) => (
                         <th
                           key={h}
-                          className={`pb-3 font-medium text-[9px] uppercase tracking-widest border-b border-white/8 ${
-                            i === 3 ? 'text-right' : ''
-                          }`}
+                          className={`pb-3 font-medium text-[9px] uppercase tracking-widest border-b border-white/8 ${i === 3 ? 'text-right' : ''
+                            }`}
                           style={{ paddingLeft: i === 0 ? '0' : '8px' }}
                         >
                           {h}
@@ -623,8 +621,8 @@ export function CekRealitaPage() {
                                 entry.change > 0
                                   ? '#00ffff'
                                   : entry.change < 0
-                                  ? '#ff6e81'
-                                  : 'rgba(255,255,255,0.3)',
+                                    ? '#ff6e81'
+                                    : 'rgba(255,255,255,0.3)',
                             }}
                           >
                             {entry.change > 0 ? '+' : ''}
