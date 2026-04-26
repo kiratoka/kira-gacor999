@@ -6,6 +6,10 @@ export function AdminPanel() {
   const { adminTargetWin, setAdminTargetWin } = useGameStore();
   const [customValue, setCustomValue] = useState('');
 
+  const PRESET_VALUES = [10000, 25000, 50000];
+  const isCustomActive =
+    adminTargetWin !== null && !PRESET_VALUES.includes(adminTargetWin);
+
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const val = parseInt(customValue);
@@ -32,7 +36,7 @@ export function AdminPanel() {
       <div className="space-y-4">
         <p className="text-[10px] font-label uppercase tracking-widest text-purple-300/50">Target Kemenangan Pemain</p>
         <div className="grid grid-cols-3 gap-2">
-          {[10000, 25000, 50000].map(val => (
+          {PRESET_VALUES.map(val => (
             <button
               key={val}
               onClick={() => setAdminTargetWin(val)}
@@ -50,7 +54,14 @@ export function AdminPanel() {
             placeholder="Custom (Rp)"
             className="flex-1 bg-purple-950/40 border border-purple-500/20 rounded-xl px-3 py-2 text-sm text-white placeholder:text-purple-300/30 focus:outline-none focus:border-purple-400"
           />
-          <button type="submit" className="px-4 py-2 bg-purple-900/60 text-purple-300 rounded-xl text-xs font-bold border border-purple-500/20 hover:bg-purple-800/60 cursor-pointer">
+          <button
+            type="submit"
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              isCustomActive
+                ? 'bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]'
+                : 'bg-purple-900/60 text-purple-300 border border-purple-500/20 hover:bg-purple-800/60'
+            }`}
+          >
             Set
           </button>
         </form>

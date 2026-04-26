@@ -298,6 +298,27 @@ export function CekRealitaPage() {
         .float-icon {
           animation: float 4s ease-in-out infinite;
         }
+        .forensik-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(0,255,255,0.35) rgba(0,255,255,0.04);
+        }
+        .forensik-scroll::-webkit-scrollbar {
+          width: 4px;
+          height: 4px;
+        }
+        .forensik-scroll::-webkit-scrollbar-track {
+          background: rgba(0,255,255,0.04);
+          border-radius: 99px;
+        }
+        .forensik-scroll::-webkit-scrollbar-thumb {
+          background: rgba(0,255,255,0.30);
+          border-radius: 99px;
+          box-shadow: 0 0 6px rgba(0,255,255,0.4);
+        }
+        .forensik-scroll::-webkit-scrollbar-thumb:hover {
+          background: rgba(0,255,255,0.55);
+          box-shadow: 0 0 10px rgba(0,255,255,0.6);
+        }
       `}</style>
 
       {/* Scan line overlay – very subtle, CSS-only */}
@@ -579,7 +600,7 @@ export function CekRealitaPage() {
                 </div>
               </div>
 
-              <div className="overflow-x-auto max-h-[280px] overflow-y-auto pr-1">
+              <div className="forensik-scroll overflow-x-auto max-h-[280px] overflow-y-auto">
                 <table className="w-full text-left text-xs whitespace-nowrap border-separate border-spacing-0">
                   <thead className="sticky top-0 z-10">
                     <tr className="text-white/30">

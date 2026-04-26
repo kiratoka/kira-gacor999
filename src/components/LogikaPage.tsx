@@ -383,15 +383,15 @@ function WithdrawDemo() {
 // ─── TOC ──────────────────────────────────────────────────────────────────────
 
 const TOC_ITEMS = [
-  { id: 'overview', label: 'Gambaran Umum', icon: <Brain className="w-3.5 h-3.5" /> },
-  { id: 'phase', label: 'Sistem Fase', icon: <Activity className="w-3.5 h-3.5" /> },
-  { id: 'rng', label: 'RNG Berbobot', icon: <Shuffle className="w-3.5 h-3.5" /> },
-  { id: 'drop', label: 'Dynamic Drop Logic', icon: <Server className="w-3.5 h-3.5" /> },
-  { id: 'reward', label: 'Pemotongan Hadiah', icon: <TrendingDown className="w-3.5 h-3.5" /> },
-  { id: 'admin', label: 'Admin Control Panel', icon: <Settings className="w-3.5 h-3.5" /> },
-  { id: 'withdraw', label: 'Manipulasi Withdraw', icon: <CreditCard className="w-3.5 h-3.5" /> },
-  { id: 'nearmiss', label: 'Near Miss & Ilusi', icon: <Eye className="w-3.5 h-3.5" /> },
-  { id: 'conclusion', label: 'Kesimpulan', icon: <Target className="w-3.5 h-3.5" /> },
+  { id: 'overview', label: 'Gambaran Umum', icon: <Brain className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'phase', label: 'Sistem Fase', icon: <Activity className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'rng', label: 'RNG Berbobot', icon: <Shuffle className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'drop', label: 'Dynamic Drop Logic', icon: <Server className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'reward', label: 'Pemotongan Hadiah', icon: <TrendingDown className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'admin', label: 'Admin Control Panel', icon: <Settings className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'withdraw', label: 'Manipulasi Withdraw', icon: <CreditCard className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'nearmiss', label: 'Near Miss & Ilusi', icon: <Eye className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
+  { id: 'conclusion', label: 'Kesimpulan', icon: <Target className="w-3.5 h-3.5 lg:w-4 lg:h-4" /> },
 ];
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
@@ -432,7 +432,7 @@ export function LogikaPage() {
           }} />
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 py-20 relative">
+        <div className="max-w-6xl mx-auto px-6 py-20 relative">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="flex items-center gap-2 mb-6">
               <InfoTag><Brain className="w-3 h-3" /> Intelligence Report #1024</InfoTag>
@@ -452,18 +452,18 @@ export function LogikaPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-12">
+      <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-12">
         {/* Sticky TOC */}
         <aside className="hidden lg:block">
           <div className="sticky top-28 space-y-1">
-            <p className="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mb-3 px-3">
+            <p className="text-[10px] lg:text-xs font-label uppercase tracking-widest text-on-surface-variant mb-3 px-3">
               Daftar Isi
             </p>
             {TOC_ITEMS.map(item => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left transition-all duration-200 text-sm cursor-pointer ${
+                className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-left transition-all duration-200 text-sm lg:text-base cursor-pointer ${
                   activeSection === item.id
                     ? 'text-primary-container font-bold'
                     : 'text-on-surface-variant hover:text-white'
@@ -527,9 +527,9 @@ export function LogikaPage() {
                     <div className="p-2 rounded-lg" style={{ backgroundColor: `${card.color}20`, color: card.color }}>
                       {card.icon}
                     </div>
-                    <h3 className="text-sm font-bold text-white">{card.title}</h3>
+                    <h3 className="text-sm lg:text-base font-bold text-white">{card.title}</h3>
                   </div>
-                  <p className="text-xs text-on-surface-variant leading-relaxed">{card.desc}</p>
+                  <p className="text-xs lg:text-sm text-on-surface-variant leading-relaxed">{card.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -554,7 +554,7 @@ export function LogikaPage() {
           {/* ── 2. Fase ── */}
           <Section id="phase">
             <SectionHeader number="02" title="Sistem Tiga Fase" tag="PHASE ALGORITHM" />
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6">
               Game ini secara otomatis meningkatkan kesulitan berdasarkan jumlah gerakan.
               Semakin banyak bermain, semakin kecil peluang kemenangan — tanpa pemberitahuan apapun.
             </p>
@@ -598,7 +598,7 @@ if (betMult === 5) {
           {/* ── 3. RNG ── */}
           <Section id="rng">
             <SectionHeader number="03" title="RNG Berbobot (Bukan Acak!)" tag="WEIGHTED RANDOM" tagColor="#a855f7" />
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6">
               "RNG" (Random Number Generator) terdengar adil, tapi sistem ini menggunakan
               <strong className="text-white"> weighted random</strong> — setiap tile punya bobot probabilitas berbeda,
               dan bobot itu berubah sesuai fase. Di Fase 3, probabilitas Diamond hanya 2% vs Green Coin 40%.
@@ -626,7 +626,7 @@ if (phase === 2) {
           {/* ── 4. Dynamic Drop ── */}
           <Section id="drop">
             <SectionHeader number="04" title="Dynamic Drop Logic" tag="SERVER-SIDE TILE GENERATION" tagColor="#00e5ff" />
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6">
               Tile baru yang jatuh setelah match <strong className="text-white">bukan acak murni</strong>.
               Di Fase 3 dan setelah withdraw, sistem secara aktif memastikan tile baru
               <em className="text-white"> tidak membentuk match</em> dengan tile di bawahnya.
@@ -680,7 +680,7 @@ if (withdrawAttempted || phase === 3 || forceLose) {
           {/* ── 5. Reward Nerfing ── */}
           <Section id="reward">
             <SectionHeader number="05" title="Pemotongan Hadiah Diam-Diam" tag="REWARD NERFING" tagColor="#ff9f43" />
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6">
               Bahkan saat kamu berhasil match, sistem bisa memotong hadiah hingga
               <strong className="text-white"> 90%</strong> secara diam-diam. Kamu melihat animasi menang,
               tapi saldo yang masuk jauh lebih kecil dari yang dijanjikan paytable.
@@ -722,7 +722,7 @@ if (stats.totalWon + totalReward > maxAllowedWin && phase >= 2) {
           {/* ── 6. Admin Panel ── */}
           <Section id="admin">
             <SectionHeader number="06" title="Admin Control Panel" tag="OPERATOR CONTROL" tagColor="#a855f7" />
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6">
               Operator memiliki kemampuan untuk mengatur batas kemenangan pemain secara real-time.
               Fitur ini tersembunyi dari pemain, tapi berdampak langsung pada setiap tile yang muncul
               dan setiap hadiah yang diterima.
@@ -774,7 +774,7 @@ if (stats.totalWon + totalReward > maxAllowedWin && phase >= 2) {
           {/* ── 7. Withdraw ── */}
           <Section id="withdraw">
             <SectionHeader number="07" title="Manipulasi Sistem Withdraw" tag="WITHDRAWAL TRICKS" tagColor="#ff2d6b" />
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6">
               Sistem withdraw dirancang dengan beberapa lapisan frustrasi: syarat turnover (TO),
               progress bar palsu, error acak, dan "pity success" pertama untuk membangun kepercayaan.
             </p>
@@ -803,7 +803,7 @@ if (stats.totalWon + totalReward > maxAllowedWin && phase >= 2) {
           {/* ── 8. Near Miss ── */}
           <Section id="nearmiss">
             <SectionHeader number="08" title="Near Miss & Ilusi Kemenangan" tag="PSYCHOLOGICAL TRICKS" tagColor="#00e5ff" />
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6">
               Near miss adalah ketika kamu "hampir menang" — dua tile Crown berjejer tapi yang ketiga
               tidak ada. Ini bukan kebetulan; sistem secara aktif menghasilkan pola ini di Fase 2 dan 3
               untuk memicu naluri "sedikit lagi!" dan mendorong terus bermain.
@@ -860,7 +860,7 @@ if (matches.length > 0) {
                 Mesin ini bukan dirancang<br />untuk <span style={{ color: '#00e5ff' }}>ditantang</span>,<br />
                 melainkan untuk <span style={{ color: '#ff2d6b' }}>mengeksploitasi</span>.
               </h2>
-              <p className="text-on-surface-variant text-sm leading-relaxed mb-6 max-w-xl">
+              <p className="text-on-surface-variant text-sm lg:text-base leading-relaxed mb-6 max-w-xl">
                 Setiap elemen — dari animasi, suara, tile yang jatuh, hingga progress bar withdraw —
                 adalah bagian dari sistem psikologis yang dirancang untuk membuatmu terus bermain
                 sambil menguras saldo secara sistematis.
@@ -905,11 +905,11 @@ function SectionHeader({
   return (
     <div className="mb-2">
       <div className="flex items-center gap-3 mb-2">
-        <span className="text-[10px] font-mono text-on-surface-variant">{number}</span>
+        <span className="text-[10px] lg:text-xs font-mono text-on-surface-variant">{number}</span>
         <div className="h-px flex-1 bg-white/5" />
         <InfoTag color={tagColor}>{tag}</InfoTag>
       </div>
-      <h2 className="text-2xl font-headline font-black text-white">{title}</h2>
+      <h2 className="text-2xl lg:text-3xl font-headline font-black text-white">{title}</h2>
     </div>
   );
 }
