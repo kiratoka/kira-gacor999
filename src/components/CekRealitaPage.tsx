@@ -733,7 +733,7 @@ export function CekRealitaPage() {
               ))}
             </div>
             <p className="text-white/15 text-[9px] uppercase tracking-widest text-center font-bold">
-              © 2024 KiraSlot999. High-Stakes Intelligence Education.
+              © 2024 KiraGacor999. High-Stakes Intelligence Education.
             </p>
             <div
               className="flex items-center gap-2 text-[#ff6e81]/50 bg-[#ff6e81]/5 px-4 py-2 rounded-full border border-[#ff6e81]/10"

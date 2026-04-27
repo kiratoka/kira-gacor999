@@ -19,7 +19,7 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
     >
       <div className={`p-6 flex items-center ${isSidebarMinimized ? 'justify-center' : 'justify-between'}`}>
         {!isSidebarMinimized && (
-          <h1 className="text-primary-container font-bold text-xl font-headline tracking-tighter truncate">KiraSlot999</h1>
+          <h1 className="text-primary-container font-bold text-xl font-headline tracking-tighter truncate">KiraGacor999</h1>
         )}
         <button
           onClick={toggleSidebar}
